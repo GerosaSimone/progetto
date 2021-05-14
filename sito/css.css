@@ -1,0 +1,103 @@
+body {
+    background-color:#666;}
+   #login {
+    width:450px;
+    border:1px solid black;
+    height:280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -225px;
+    background-color:#fff;
+    border-radius:25px;
+    -webkit-border-radius:25px;
+    -moz-border-radius: 25px;
+    }
+    
+   #titolologin{
+    border-bottom:1px solid #918A8A;
+    height:25px;
+    width:425px;
+    float:left;
+    padding:20px 0 15px 25px;
+    font-size:30px;
+    border-radius:25px 25px 0 0;
+    -webkit-border-radius:25px 25px 0 0;
+    -moz-border-radius: 25px 25px 0 0;
+    background: rgb(255,255,255); 
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 100%); 
+  
+   
+   
+   }
+   
+   #register{
+
+    margin-right:90px;}
+    
+   .button {
+    width:125px;
+    height:35px;
+    text-shadow:2px 2px 5px rgba(212,212,212,1);
+    color:rgb(2, 2, 2);
+    font-size:20px;
+    border:1px solid #fff;
+    background: #fc8600; 
+    background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
+    box-shadow: 2px 2px 5px #000;
+    }
+
+   .button:hover {
+    box-shadow: 2px 2px 5px #000;}
+   .button:active{
+    box-shadow:none;
+    }
+
+   .formlogin{
+    margin:75px 50px 50px 50px;
+    margin-top:75px;
+    }
+   
+   .testo {
+    height:30px;
+    width:350px;
+    margin-bottom:15px;
+    background: #FFFFFF; 
+    background: -moz-linear-gradient(top, #FFF 0%, #DBDBDB 100%); 
+    padding:5px;}
+    
+    .powerpoint{
+        width:125px;
+        height:35px;
+        text-shadow:2px 2px 5px rgba(212,212,212,1);
+        color:#fff;
+        font-size:20px;
+        border:1px solid #fff;
+        background: #072dd3; 
+        background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
+        box-shadow: 2px 2px 5px #000;
+        margin-top: 500px;
+        margin-left: 1100px;
+
+    }
+   
+    .download{
+        width:125px;
+        height:35px;
+        text-shadow:2px 2px 5px rgba(212,212,212,1);
+        color:#fff;
+        font-size:20px;
+        border:1px solid #fff;
+        background: #ff0000; 
+        background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
+        box-shadow: 2px 2px 5px #000;
+        margin-top: 500px;
+        margin-left: 500px;
+
+    }
+    
+   .testo:focus, .testo:hover{
+    height:35px;
+    width:355px;
+    }
