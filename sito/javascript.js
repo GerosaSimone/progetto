@@ -1,4 +1,4 @@
-
+var utenti = vettoreUtenti();
 /*
 function WriteToFile() {
 
@@ -24,7 +24,7 @@ function WriteToFile() {
 */
 
 function register() {
-    var filename = "C:\\Users\\locat\\Desktop\\sito\\database.txt";
+    var filename = "../database.txt";
     var fso = new ActiveXObject("Scripting.FileSystemObject");
     if (controllo) {
         let ut = utente(document.getElementById("username").value, document.getElementById("password").value);
@@ -32,22 +32,22 @@ function register() {
         if (esistente) {
             document.getElementById("err").innerHTML == "l'utente esiste gia, fare log-in";
         } else {
-            
+
             if (fso.FileExists(filename)) {
                 var a, ForAppending, file;
                 ForAppending = 8;
                 file = fso.OpenTextFile(filename, ForAppending, false);
-                file.WriteLine(ut.to_string());
+                file.Write(ut.to_string());
             }
             utenti.push(ut);
-       
-           clear();
+
+            clear();
         }
     } else {
         document.getElementById("err").innerHTML == "inserire tutti i campi";
-        
+
     }
-    
+
 }
 function login() {
     if (controllo) {
@@ -69,8 +69,29 @@ function clear() {
 }
 function vettoreUtenti() {
 
+    vettore = new Array();
+    var filename = "../database.txt";
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    if (fso.FileExists(filename)) {
+        var a, ForAppending, file;
+        ForAppending = 8;
+        file = fso.OpenTextFile(filename, ForAppending, false);
+        var testo = file.Read();
+        var temp = testo.split(";")
 
-    return Object;
+        for (let i = 0; i < temp.lenght(); i++) {
+            vettore.push(to_utente(temp[i]));
+        }
+
+
+    }
+    return vettore;
+}
+function to_utente(tmp) {
+    let tmp1;
+    let tmp2 = tmp.split("-")
+    tmp1 = utente(tmp2[0], tmp2[1]);
+    return tmp1;
 }
 function esistente(ut) {
     //controllo se l utente esiste nel vettore di utenti
@@ -78,7 +99,7 @@ function esistente(ut) {
         if (utenti[i] == ut)
             return true;
         else
-            return false;   
+            return false;
     }
 }
 function controllo() {
