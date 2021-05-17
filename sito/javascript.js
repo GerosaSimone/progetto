@@ -1,53 +1,50 @@
+class utente {
 
-/*
-function WriteToFile() {
+    constructor(nome, password) {
+        this.nome = nome;
+        this.password = password;
+    }
 
-    // se il file esiste aggiunge due righe
-    // con il contenuto delle variabili nome/cognome
-    if (fso.FileExists(filename)) {
-        var a, ForAppending, file;
-        ForAppending = 8;
-        file = fso.OpenTextFile(filename, ForAppending, false);
-        file.WriteLine(nome);
-        file.WriteLine(password);
+    getNome() {
+        return this.nome;
     }
-    //Se non esiste crea il file e
-    // aggiunge due righe
-    // con il contenuto delle variabili nome/cognome
-    else {
-        
-        file.WriteLine(cognome);
-        file.WriteLine(cognome);
+    getPassword() {
+        return this.password;
     }
-    file.Close();
+
+    to_string() {
+        return this.nome + "-" + this.password + ";";
+    }
+
 }
-*/
 
-function register() {
-    var filename = "C:\\Users\\locat\\Desktop\\sito\\database.txt";
-    var fso = new ActiveXObject("Scripting.FileSystemObject");
+var utenti;
+var tmp = new ActiveXObject("Scripting.FileSystemObject");
+var fileName = "D:\\github\\progetto\\sito\\database.txt";
+tmp.CreateTextFile(fileName);
+
+
+function registrati() {
+    alert("asdidasi");
     if (controllo) {
         let ut = utente(document.getElementById("username").value, document.getElementById("password").value);
 
         if (esistente) {
             document.getElementById("err").innerHTML == "l'utente esiste gia, fare log-in";
         } else {
-            
-            if (fso.FileExists(filename)) {
-                var a, ForAppending, file;
-                ForAppending = 8;
-                file = fso.OpenTextFile(filename, ForAppending, false);
-                file.WriteLine(ut.to_string());
-            }
+
+            var file = tmp.GetFile(fileName);
+            var streamAppend = file.OpenAsTextStream(8);
+            streamAppend.WriteLine(ut.to_string());
+            streamAppend.Close();
             utenti.push(ut);
-       
-           clear();
+            clear();
         }
     } else {
         document.getElementById("err").innerHTML == "inserire tutti i campi";
-        
+
     }
-    
+
 }
 function login() {
     if (controllo) {
@@ -68,9 +65,24 @@ function clear() {
     document.getElementById("password").value == "";
 }
 function vettoreUtenti() {
+    alert("asdidasi");
+    var file = tmp.GetFile(fileName);
+    var streamReader = file.OpenAsTextStream(1);
+
+    vettore = new Array();
+    while (!streamReader.AtEndOfStream) {
+        let line = streamReader.ReadLine();
+        vettore.push(to_utente(line));
+    }
+    utenti = vettore;
 
 
-    return Object;
+}
+function to_utente(tmp) {
+    let tmp1;
+    let tmp2 = tmp.split("-")
+    tmp1 = utente(tmp2[0], tmp2[1]);
+    return tmp1;
 }
 function esistente(ut) {
     //controllo se l utente esiste nel vettore di utenti
@@ -78,7 +90,7 @@ function esistente(ut) {
         if (utenti[i] == ut)
             return true;
         else
-            return false;   
+            return false;
     }
 }
 function controllo() {
@@ -89,25 +101,4 @@ function controllo() {
     }
 }
 
-class utente {
 
-    utente(nome, password) {
-        this.nome = nome;
-        this.password = password;
-    }
-
-    getNome() {
-        return this.nome;
-    }
-    getPassword() {
-        return this.password;
-    }
-
-    to_string() {
-        return this.nome + "-" + this.password + ";";
-    }
-
-    utenti = new Array();
-
-
-}

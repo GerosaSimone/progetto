@@ -7,7 +7,7 @@
     </script>
 </head>
 
-<body>
+<body onload="vettoreUtenti()">
     <div id="login">
         <div id="titolologin"><label>Login</label></div>
         <form action="#" class="formlogin" >
@@ -15,9 +15,9 @@
             <input type="text" id="username" class="testo" placeholder="Username..." /><br>
             <label>Password:</label>
             <input type="password" id="password" class="testo" placeholder="Password..." /><br>
-            <a href="#"><input type="button" class="button" id="register" name="Register" onclick="register()" value="Register" /></a>
-            <input type="submit" class="button" name="submit" onclick="login()"value="Login" />
-            
+            <input type="button" class="button" id="register" name="Register" onclick="registrati()" value="Register" />
+            <input type="submit" class="button" name="submit" onclick="login()" value="Login" />
+            <input type="text" id="err">
         </form>
     </div>
 </body>
