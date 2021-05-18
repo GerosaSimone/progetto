@@ -1,5 +1,6 @@
 body {
     background-color:#666;}
+
     #menucss {height:180px;}
 #menucss a {
    text-decoration: none;
@@ -8,31 +9,31 @@ body {
      font-family: monospace;
 }
 #menucss ul {
-   background: darkorange;
+   background: rgb(30, 255, 0);
      list-style: none;
      margin: 0;
      padding-left: 0;
 }
 #menucss li {
      color: #fff;
-   background: darkorange;
+   background: rgb(38, 0, 255);
      display: block;
      float: left;
      padding: 1rem;
      position: relative;
      text-decoration: none;
-   transition-duration: 0.5s;
+    transition-duration: 0.5s;
     z-index:99999;
 } 
 #menucss li a {
    color: #fff;
 }
 #menucss li:hover {
-     background: red;
+     background: rgb(189, 221, 8);
      cursor: pointer;
 }
 #menucss ul li ul {
-     background: orange;
+     background: rgb(0, 255, 13);
      visibility: hidden;
    opacity: 0;
    min-width: 5rem;
@@ -61,12 +62,12 @@ ul li ul:hover {
     padding-left: 80px;
     padding-right: 80px;
         background-color:rgb(8, 10, 141);
-        color:greenyellow;
+        color:rgb(255, 255, 255);
         text-align: center;
     }
 
     #tabella {
-        border: 5px solid rgb(7, 7, 7);
+        border: 5px solid rgb(255, 255, 255);
         display: table;
         margin-right: 450px;
         margin-left: 450px;
@@ -75,27 +76,24 @@ ul li ul:hover {
     padding-bottom: 100px;
     padding-left: 0px;
     padding-right: 0;
-        background-color:rgb(219, 73, 5);
+        background-color:rgb(0, 0, 0);
         color:rgb(0, 0, 0);
         text-align: center;
     }
     .ins{
-
-        border: 5px solid rgb(7, 7, 7);
-        display: table;
-        margin-right: 450px;
-        margin-left: 450px;
-    margin-bottom: 1px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 0px;
-    padding-right: 0;
-        background-color:rgb(8, 10, 141);
-        color:rgb(255, 255, 255);
-        text-align: center;
-
-
+            width: 95px;
+            height: 95px;
+            background-color: #666;
+            background-image: url('foto.png');   
+            background-position: center center;
     }
+    .ins1{
+        width: 95px;
+        height: 95px;
+        background-color: #666;
+        background-image: url('Livello 2.png');   
+        background-position: center center;
+}
     footer 
 	{
 		background-color: #222222;
@@ -122,123 +120,9 @@ ul li ul:hover {
 		padding: 20px;
 	}	
 
-.contenuto {
-    margin-top: 2%;
-    margin-left: 40%;
-    width: 45%;
-}
-.contenuto2 {
-    margin-top: 2%;
-    margin-left: 5%;
-    width: 30%;
-}
-p{
-    width: 90%;
-    text-align: justify;
-}
-
-.bordi{
-    border-style: ridge; 
-    border-color: rgba(223, 209, 209, 0.39); 
-    border-width: 5px;
-    padding: 20px;  
-}
-.titolo{
-    size: 20px;
-    margin-bottom: 15px;
-}
-
-.active:after { /* dopo essere stato attivato */
-  content: "\2212";
-}
-.comparsa {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
-  background-color: #f1f1f1;
-  width: 80%;
-  font-size: 19px;
-}
-hr {
-
-    background-color: #2b16e7;
-    border-top: 2px solid #05209c;
-    border-bottom: 2px solid #051ad8;
-    margin-top: 25px;
-    
-
-}
-.sottotitolo{
-    font-family: inherit;
-    color: #1042e6;
-    font-size: 40px;
-   
-    font-weight: 600;
-    padding-bottom: 0px;
-    margin-top: 9px;
-    margin-bottom: 0px;
-}
-body{
-    background-color: rgb(241,241,241);
-}
-header{
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    position: inherit;
-    
-}
-#titolo{
-    font-family: inherit;
-    color: #1227e4;
-    font-size: 50px;
-    font-weight: 600;
-    padding-bottom: 0px;
-    padding-top: 30px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    text-align: center;
-}
 
 
-.divtitolo{
-margin: 0 auto; /* ipotizzando che sia centrato all'interno della pagina */
-padding: 0;
-position: relative;
-width: 100%;
-height: 100px;
-}
 
-h1{
-    color: rgba(0, 0, 0, 0.726);
-    font-size: 25px;
-    margin-block-start: 20px;
-    margin-block-end: 20px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;  
-}
-
-.bottone2 {
-  background-color: rgb(241,241,241); 
-  color: #1411bd;    
-  cursor: pointer;  /* Cambio del cursore al passaggio */
-  padding: 18px;
-  width: 55%;
-  border:ridge;
-  text-align: left;
-  font-size: 20px;
-  font-weight: bold;
-  border-width: 4px;
-  border-color: rgb(241,241,241);
-  position: relative;
-}
-.assoluto{
-    position: absolute;
-}
-.legemda{
-    margin-top:20%;
-}
 
 a:link {
   color: #D2691E;
