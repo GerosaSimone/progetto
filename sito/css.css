@@ -1,103 +1,177 @@
 body {
     background-color:#666;}
-   #login {
-    width:450px;
-    border:1px solid black;
-    height:280px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -140px;
-    margin-left: -225px;
-    background-color:#fff;
-    border-radius:25px;
-    -webkit-border-radius:25px;
-    -moz-border-radius: 25px;
-    }
-    
-   #titolologin{
-    border-bottom:1px solid #918A8A;
-    height:25px;
-    width:425px;
-    float:left;
-    padding:20px 0 15px 25px;
-    font-size:30px;
-    border-radius:25px 25px 0 0;
-    -webkit-border-radius:25px 25px 0 0;
-    -moz-border-radius: 25px 25px 0 0;
-    background: rgb(255,255,255); 
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 100%); 
-  
-   
-   
-   }
-   
-   #register{
 
-    margin-right:90px;}
-    
-   .button {
-    width:125px;
-    height:35px;
-    text-shadow:2px 2px 5px rgba(212,212,212,1);
-    color:rgb(2, 2, 2);
-    font-size:20px;
-    border:1px solid #fff;
-    background: #fc8600; 
-    background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
-    box-shadow: 2px 2px 5px #000;
+    #menucss {height:180px;}
+#menucss a {
+   text-decoration: none;
+}
+#mnucss nav {
+     font-family: monospace;
+}
+#menucss ul {
+   background: rgb(30, 255, 0);
+     list-style: none;
+     margin: 0;
+     padding-left: 0;
+}
+#menucss li {
+     color: #fff;
+   background: rgb(38, 0, 255);
+     display: block;
+     float: left;
+     padding: 1rem;
+     position: relative;
+     text-decoration: none;
+    transition-duration: 0.5s;
+    z-index:99999;
+} 
+#menucss li a {
+   color: #fff;
+}
+#menucss li:hover {
+     background: rgb(189, 221, 8);
+     cursor: pointer;
+}
+#menucss ul li ul {
+     background: rgb(0, 255, 13);
+     visibility: hidden;
+   opacity: 0;
+   min-width: 5rem;
+     position: absolute;
+   transition: all 0.5s ease;
+   margin-top: 1rem;
+     left: 0;
+}
+#menucss ul li:hover > ul, ul li:focus-within > ul,
+ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+}
+#menucss ul li ul li {
+     clear: both;
+   width: 100%;
+}
+    h1{
+        border: 5px solid rgb(7, 7, 7);
+        display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+        background-color:rgb(8, 10, 141);
+        color:rgb(255, 255, 255);
+        text-align: center;
     }
 
-   .button:hover {
-    box-shadow: 2px 2px 5px #000;}
-   .button:active{
-    box-shadow:none;
+    #tabella {
+        border: 5px solid rgb(255, 255, 255);
+        display: table;
+        margin-right: 450px;
+        margin-left: 450px;
+    margin-bottom: 1px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 0px;
+    padding-right: 0;
+        background-color:rgb(0, 0, 0);
+        color:rgb(0, 0, 0);
+        text-align: center;
     }
+    .ins{
+            width: 95px;
+            height: 95px;
+            background-color: #666;
+            background-image: url('foto.png');   
+            background-position: center center;
+            position: fixed; right: 300px; bottom: 300px;
+    }
+    .ins1{
+        width: 95px;
+        height: 95px;
+        background-color: #666;
+        background-image: url('Livello 2.png');   
+        background-position: center center;
+        position: fixed; left: 300px; bottom: 300px;
+}
+    footer 
+	{
+		background-color: #222222;
+		padding: 15px 0px;
+        position:fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	footer ul
+	{
+		list-style: none;
+		margin: auto;
+		display: inline-block;
+		padding-top: 20px;
+	}
+	footer ul li 
+	{
+		float: left;
+	}
+	footer ul li a
+	{
+		color: #b1aca1;
+		padding: 20px;
+	}	
 
-   .formlogin{
-    margin:75px 50px 50px 50px;
-    margin-top:75px;
-    }
-   
-   .testo {
-    height:30px;
-    width:350px;
-    margin-bottom:15px;
-    background: #FFFFFF; 
-    background: -moz-linear-gradient(top, #FFF 0%, #DBDBDB 100%); 
-    padding:5px;}
-    
-    .powerpoint{
-        width:125px;
-        height:35px;
-        text-shadow:2px 2px 5px rgba(212,212,212,1);
-        color:#fff;
-        font-size:20px;
-        border:1px solid #fff;
-        background: #072dd3; 
-        background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
-        box-shadow: 2px 2px 5px #000;
-        margin-top: 500px;
-        margin-left: 1100px;
 
-    }
-   
-    .download{
-        width:125px;
-        height:35px;
-        text-shadow:2px 2px 5px rgba(212,212,212,1);
-        color:#fff;
-        font-size:20px;
-        border:1px solid #fff;
-        background: #ff0000; 
-        background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
-        box-shadow: 2px 2px 5px #000;
-        margin-top: 500px;
-        margin-left: 500px;
 
-    }
-    
-   .testo:focus, .testo:hover{
-    height:35px;
-    width:355px;
-    }
+
+
+a:link {
+  color: #D2691E;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+a:visited {
+  color: #D2691E;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #D2691E;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+a:active {
+  color: #D2691E;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.leg{
+    border:ridge;
+    padding: 10px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align:left;
+}
+.home{
+    width: 160px;
+    height: 150px;
+    background-color: #666;
+    background-image: url('home-97609_960_720.png');   
+    background-position: center center;
+    position: fixed; left: 100px; bottom: 100px;  
+}
+.next{
+    width: 130px;
+    height: 100px;
+    background-color: #666;
+    background-image: url('freccia.png');   
+    background-position: center center;
+    position: fixed; right: 100px; bottom: 100px;  
+}
