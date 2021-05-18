@@ -103,7 +103,7 @@ ul li.active a {
 .sezione {
     margin-left: 900px;
     margin-right: 350px;
-    border: 2px solid rgb(14, 154, 179);
+    border: 2px solid rgb(3, 20, 112);
     margin-top: 450px;
     padding: 30px;
     background-color: rgb(134, 134, 134);
@@ -117,8 +117,7 @@ a:visited {
     font-size: 110%;
 }
 
-a:hover,
-a:active {
+a:hover {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-size: 110%;
