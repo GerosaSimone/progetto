@@ -20,6 +20,7 @@ void loop()
 
   if(presente){
       Serial.println(chiave());
+	  //aspetta un'ora
     delay(3600000);
   }else{
       keyOnEEPROM();
@@ -45,7 +46,7 @@ bool controllo(){
 String chiave(){
   String tmp="";
   //i<keysize
-  for(int i=0; i<128; i++)
+  for(int i=0; i<24; i++)
   {
        tmp+= char(EEPROM.read(i)); 
   }
@@ -54,7 +55,7 @@ String chiave(){
 void keyOnEEPROM(){
   //key size
   while(Serial.available()<=10);
-  for(int i=0;i<128;i++){
+  for(int i=0;i<24;i++){
     char c=Serial.read();
     EEPROM.write(i,c);
   }
