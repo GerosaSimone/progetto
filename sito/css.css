@@ -1,103 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Century Gothic;
+}
+
 body {
-    background-color:#666;}
-   #login {
-    width:450px;
-    border:1px solid black;
-    height:280px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21)), url(1.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+ul {
+    list-style-type: none;
+    float: left;
+    margin-top: 25px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+}
+
+ul li a:hover {
+    background-color: #fff;
+    color: black;
+}
+
+ul li.active a {
+    background-color: #fff;
+    color: black;
+}
+
+.main {
+    max-width: 2400px;
+    margin: auto;
+}
+
+.title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -140px;
-    margin-left: -225px;
-    background-color:#fff;
-    border-radius:25px;
-    -webkit-border-radius:25px;
-    -moz-border-radius: 25px;
-    }
-    
-   #titolologin{
-    border-bottom:1px solid #918A8A;
-    height:25px;
-    width:425px;
-    float:left;
-    padding:20px 0 15px 25px;
-    font-size:30px;
-    border-radius:25px 25px 0 0;
-    -webkit-border-radius:25px 25px 0 0;
-    -moz-border-radius: 25px 25px 0 0;
-    background: rgb(255,255,255); 
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 100%); 
-  
-   
-   
-   }
-   
-   #register{
+    top: 35%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+}
 
-    margin-right:90px;}
-    
-   .button {
-    width:125px;
-    height:35px;
-    text-shadow:2px 2px 5px rgba(212,212,212,1);
-    color:rgb(2, 2, 2);
-    font-size:20px;
-    border:1px solid #fff;
-    background: #fc8600; 
-    background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
-    box-shadow: 2px 2px 5px #000;
-    }
+.title h1 {
+    color: #fff;
+    font-size: 85px;
+}
 
-   .button:hover {
-    box-shadow: 2px 2px 5px #000;}
-   .button:active{
-    box-shadow:none;
-    }
+.button {
+    position: absolute;
+    top: 42%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+}
 
-   .formlogin{
-    margin:75px 50px 50px 50px;
-    margin-top:75px;
-    }
-   
-   .testo {
-    height:30px;
-    width:350px;
-    margin-bottom:15px;
-    background: #FFFFFF; 
-    background: -moz-linear-gradient(top, #FFF 0%, #DBDBDB 100%); 
-    padding:5px;}
-    
-    .powerpoint{
-        width:125px;
-        height:35px;
-        text-shadow:2px 2px 5px rgba(212,212,212,1);
-        color:#fff;
-        font-size:20px;
-        border:1px solid #fff;
-        background: #072dd3; 
-        background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
-        box-shadow: 2px 2px 5px #000;
-        margin-top: 500px;
-        margin-left: 1100px;
+.btn {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
 
-    }
-   
-    .download{
-        width:125px;
-        height:35px;
-        text-shadow:2px 2px 5px rgba(212,212,212,1);
-        color:#fff;
-        font-size:20px;
-        border:1px solid #fff;
-        background: #ff0000; 
-        background: -moz-linear-gradient(top, #fc8600 0%, #f7d200 100%); 
-        box-shadow: 2px 2px 5px #000;
-        margin-top: 500px;
-        margin-left: 500px;
+.btn:hover {
+    background-color: #fff;
+    color: black;
+}
 
-    }
-    
-   .testo:focus, .testo:hover{
-    height:35px;
-    width:355px;
-    }
+.next {
+    width: 145px;
+    height: 150px;
+    background-color: #c9c7c7;
+    background-image: url('freccia.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+}
+
+.home {
+    width: 180px;
+    height: 150px;
+    background-color: #07b2c9;
+    background-image: url('home-97609_960_720.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    left: 30px;
+    bottom: 100px;
+}
+
+.sezione {
+    margin-left: 900px;
+    margin-right: 350px;
+    border: 2px solid rgb(3, 20, 112);
+    margin-top: 450px;
+    padding: 30px;
+    background-color: rgb(134, 134, 134);
+    font-size: 110%;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 110%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 110%;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    font-size: 85px;
+    bottom: 100px;
+    top: 35%;
+    left: 0%;
+}

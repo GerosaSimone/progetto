@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Form-Login</title>
     <link rel="stylesheet" href="css.css" type="text/css" />
@@ -7,19 +8,32 @@
     </script>
 </head>
 
-<body onload="vettoreUtenti()">
-    <div id="login">
-        <div id="titolologin"><label>Login</label></div>
-        <form action="#" class="formlogin" >
-            <label>Usename:</label>
-            <input type="text" id="username" class="testo" placeholder="Username..." /><br>
-            <label>Password:</label>
-            <input type="password" id="password" class="testo" placeholder="Password..." /><br>
-            <input type="button" class="button" id="register" name="Register" onclick="registrati()" value="Register" />
-            <input type="submit" class="button" name="submit" onclick="login()" value="Login" />
-            <input type="text" id="err">
+
+<body>
+
+    <div class="main">
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="https://github.com/GerosaSimone/progetto">github</a></li>
+            <li><a href="problematiche.html">problematiche</a></li>
+            <li><a href="powerpoint.html">power point</a></li>
+        </ul>
+
+    </div>
+    <div class="title">
+        <h1>Progetto tecnologie</h1>
+    </div>
+
+    <div class="button">
+        <form method="get" action="documento requisiti progetto.docx">
+            <a href="#" class="btn" type="submit">Download documento dei requesiti</a>
+
+            <a href="#" class="btn">DOWNLOAD APP</a>
         </form>
     </div>
+
+
 </body>
+
 
 </html>
