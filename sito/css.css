@@ -86,6 +86,7 @@ ul li ul:hover {
             background-color: #666;
             background-image: url('foto.png');   
             background-position: center center;
+            position: fixed; right: 300px; bottom: 300px;
     }
     .ins1{
         width: 95px;
@@ -93,6 +94,7 @@ ul li ul:hover {
         background-color: #666;
         background-image: url('Livello 2.png');   
         background-position: center center;
+        position: fixed; left: 300px; bottom: 300px;
 }
     footer 
 	{
@@ -156,4 +158,20 @@ a:active {
     font-size: 20px;
     font-weight: bold;
     text-align:left;
+}
+.home{
+    width: 160px;
+    height: 150px;
+    background-color: #666;
+    background-image: url('home-97609_960_720.png');   
+    background-position: center center;
+    position: fixed; left: 100px; bottom: 100px;  
+}
+.next{
+    width: 130px;
+    height: 100px;
+    background-color: #666;
+    background-image: url('freccia.png');   
+    background-position: center center;
+    position: fixed; right: 100px; bottom: 100px;  
 }
