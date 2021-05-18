@@ -1,73 +1,79 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Century Gothic;
 }
 
-
-body{
-    background-image:linear-gradient(rgba(0,0,0,0.21),rgba(0,0,0,0.21)), url(1.jpg);
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21)), url(1.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
-    
 }
 
-ul{
+ul {
     list-style-type: none;
     float: left;
     margin-top: 25px;
 }
-ul li{
-    display: inline-block;
 
+ul li {
+    display: inline-block;
 }
-ul li a{
+
+ul li a {
     text-decoration: none;
     color: #fff;
     padding: 5px 20px;
     border: 1px solid transparent;
     transition: 0.6s ease;
 }
-ul li a:hover{
-    background-color: #fff;
-    color:black;
 
-}
-ul li.active a{
+ul li a:hover {
     background-color: #fff;
-    color:black;
+    color: black;
 }
-.main{
+
+ul li.active a {
+    background-color: #fff;
+    color: black;
+}
+
+.main {
     max-width: 2400px;
     margin: auto;
 }
-.title{
+
+.title {
     position: absolute;
     top: 35%;
     left: 27%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.title h1{
-    color:#fff;
+
+.title h1 {
+    color: #fff;
     font-size: 85px;
 }
-.button{
+
+.button {
     position: absolute;
     top: 42%;
     left: 27%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.btn{
-    border:1px solid #fff;
-    color:#fff;
-    padding:10px 30px;
+
+.btn {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 30px;
     text-decoration: none;
     transition: 0.6s ease;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #fff;
-    color:black;
+    color: black;
 }
 
 .next {
@@ -77,18 +83,51 @@ ul li.active a{
     background-image: url('freccia.png');
     background-repeat: no-repeat;
     background-position: center center;
-    position: fixed; right:30px; bottom:100px;
-  }
-  .home {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+}
+
+.home {
     width: 180px;
     height: 150px;
     background-color: #07b2c9;
     background-image: url('home-97609_960_720.png');
     background-repeat: no-repeat;
     background-position: center center;
-    position: fixed; left:30px; bottom:100px;
-  }
-  #tabella{
+    position: fixed;
+    left: 30px;
+    bottom: 100px;
+}
 
-    border: 2px solid rgb(0, 0, 0);
-  }
+.sezione {
+    margin-left: 900px;
+    margin-right: 350px;
+    border: 2px solid rgb(14, 154, 179);
+    margin-top: 450px;
+    padding: 30px;
+    background-color: rgb(134, 134, 134);
+    font-size: 110%;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 110%;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 110%;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    font-size: 85px;
+    bottom: 100px;
+    top: 35%;
+    left: 0%;
+}
