@@ -1,0 +1,126 @@
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
+import javax.swing.border.LineBorder;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.SecretKeySpec;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import org.apache.poi.hpsf.Section;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+public class WelcomePage extends JFrame implements ActionListener {
+
+    JFrame frame = new JFrame();
+    JMenuBar menubar;
+    JMenu menu;
+    JMenu menu2;
+
+    JMenuItem load;
+    JMenuItem download;
+    JMenuItem nuovo;
+    
+    JMenuItem disconnetti;
+
+    int cont = 1;
+
+    String[] es = new String[]{"--- Cerca ---"};
+
+    String ID = "";
+
+    String key = Seriale.getKey();
+
+    JTextField NomeFile = new JTextField();
+    JTextField CercaFile = new JTextField();
+
+    JLabel NomeFileLabel = new JLabel("Inserisci il nome del file");
+    JLabel CercaFileLabel = new JLabel("Nome File da caricare");
+
+    ImageIcon icon = new ImageIcon(getClass().getResource("new.png"));
+    ImageIcon icon2 = new ImageIcon(getClass().getResource("load.png"));
+    ImageIcon icon3 = new ImageIcon(getClass().getResource("download.png"));
+    ImageIcon icon4 = new ImageIcon(getClass().getResource("disconnect-icon.png"));
+
+    JTextArea jt = new JTextArea("Inserire il testo QUI...");
+    JComboBox<String> ricerche = new JComboBox<>(es);
+----------------------------------------------------------------------------------------------------------------------------------
+ System.out.println(nomeUtente);
+
+        ricerche.setBounds(400, 80, 200, 25);
+        NomeFile.setBounds(400, 20, 200, 25);
+
+        NomeFileLabel.setBounds(620, 20, 150, 25);
+        CercaFileLabel.setBounds(620, 80, 150, 25);
+
+        menubar = new JMenuBar();
+
+        menu = new JMenu("File");
+       
+        menubar.add(menu);
+ 
+        
+
+        nuovo = new JMenuItem("New File", icon);
+        menu.add(nuovo);
+        // caricare file da modificare
+
+        load = new JMenuItem("Load", icon2);
+        menu.add(load);
+
+        // scarica il file sul pc
+        download = new JMenuItem("Download", icon3);
+        menu.add(download);
+        
+        disconnetti = new JMenuItem("Disconnetti", icon4);
+        menu.add(disconnetti);
+   
+
+
+        nuovo.addActionListener(this);
+        load.addActionListener(this);
+        download.addActionListener(this);
+        disconnetti.addActionListener(this);
+   
+
+        jt.setBounds(20, 20, 350, 400);
+        jt.setBorder(new LineBorder(Color.BLACK));
+        frame.add(ricerche);
+        frame.add(NomeFileLabel);
+        frame.add(CercaFileLabel);
+        frame.add(jt);
+        frame.add(NomeFile);
+        frame.add(CercaFile);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1000, 600);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setJMenuBar(menubar);
+        jt.setLineWrap(true);
+    }
