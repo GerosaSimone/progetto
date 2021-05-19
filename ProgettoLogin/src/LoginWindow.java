@@ -26,15 +26,20 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
-public class LoginWindow implements ActionListener { 
+public class LoginWindow implements ActionListener {
 
+    ImageIcon image = new ImageIcon(getClass().getResource("app.png"));
     boolean controllo = false;
     JFrame frame = new JFrame();
     JButton loginButton = new JButton("Login");
@@ -42,30 +47,56 @@ public class LoginWindow implements ActionListener {
     JButton resetButton = new JButton("Reset");
     JTextField UserID = new JTextField();
     JPasswordField Password = new JPasswordField();
-    JLabel UserIDLabel = new JLabel("UserID:");
-    JLabel UserPasswordLabel = new JLabel("Password:");
+    JLabel UserIDLabel = new JLabel("  UserID:  ");
+    JLabel UserPasswordLabel = new JLabel("  Password:  ");
     JLabel Message = new JLabel();
-  
+    Border border = new LineBorder(new Color(173, 216, 230), 2);
+    Border border2 = new LineBorder(new Color(72, 61, 139), 2);
+
     HashMap<String, String> logininfo = new HashMap<String, String>();
-    
+
     LoginWindow(HashMap<String, String> loginInfo2) {
 
+        // GRAFICA BOTTONI
+        // setBackground -> sfondo bottoni
+        // setFont -> font bottoni ( Tipo del font, Grassetto/Corsivo, Dimensione )
+        // setForeground -> Colore Testo all'interno dei bottoni
+        // setBorder -> impostazione dei Bordi settati in precedenza
+        loginButton.setBackground(new Color(173, 216, 230));
+        registerButton.setBackground(new Color(173, 216, 230));
+        resetButton.setBackground(new Color(173, 216, 230));
+        loginButton.setFont(new Font("Comic Sans", Font.BOLD, 13));
+        loginButton.setForeground(new Color(0, 0, 0));
+        registerButton.setFont(new Font("Comic Sans", Font.BOLD, 13));
+        registerButton.setForeground(new Color(0, 0, 0));
+        resetButton.setFont(new Font("Comic Sans", Font.BOLD, 13));
+        Message.setForeground(new Color(0, 0, 0));
+
+        loginButton.setBorder(border2);
+        registerButton.setBorder(border2);
+        resetButton.setBorder(border2);
+
+        // Impostazione del colore di sfondo del frame
+        frame.getContentPane().setBackground(new Color(173, 216, 230));
+
+        // Passaggio delle variabili
         logininfo = loginInfo2;
 
-        UserIDLabel.setBounds(50, 100, 75, 25);
-        UserPasswordLabel.setBounds(50, 150, 75, 25);
+        // Impostazione della posizione e dimensione dei vari elementi grafici
+        UserIDLabel.setBounds(50, 100, 80, 25);
+        UserPasswordLabel.setBounds(50, 150, 80, 25);
 
         Message.setBounds(160, 250, 250, 35);
         Message.setFont(new Font(null, Font.ITALIC, 15));
 
-        UserID.setBounds(125, 100, 200, 25);
-        Password.setBounds(125, 150, 200, 25);
+        UserID.setBounds(145, 100, 200, 25);
+        Password.setBounds(145, 150, 200, 25);
 
-        loginButton.setBounds(125, 200, 100, 25);
+        loginButton.setBounds(120, 200, 100, 25);
         loginButton.addActionListener(this);
         loginButton.setFocusable(false);
 
-        resetButton.setBounds(225, 200, 100, 25);
+        resetButton.setBounds(235, 200, 100, 25);
         resetButton.addActionListener(this);
         resetButton.setFocusable(false);
 
@@ -85,11 +116,19 @@ public class LoginWindow implements ActionListener {
         frame.setSize(500, 500);
         frame.setLayout(null);
         frame.setVisible(true);
+
+        // Impostazione del titolo della finestra
+        frame.setTitle("Login");
+        // setResizable(false) -> Toglie la possibilità di ridimensionare il frame
+        frame.setResizable(false);
+        // setIconImage -> imposta una nuova icona dell'applicazione ( in alto a sinistra )
+        frame.setIconImage(image.getImage());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        // Reset Button cancella i testi presenti all'interno delle caselle di testo
         if (e.getSource() == resetButton) {
 
             UserID.setText("");
@@ -97,6 +136,11 @@ public class LoginWindow implements ActionListener {
 
         }
 
+        //viene utilizzato per la registrazione di un nuovo utente e inoltre
+        //controlla che l'ID inserito non sia gia presente all'interno del registro
+        //e una volta che si è assicurato di questo la pagina viene ricaricata con il nuovo 
+        //registro cosi da dare la possibilita al nuovo utente appena registrato di poter accedere
+        //all'applicazione tramite login
         if (e.getSource() == registerButton) {
 
             String userID = UserID.getText();
@@ -104,15 +148,14 @@ public class LoginWindow implements ActionListener {
             ArrayList<String> controlloRegistro = new ArrayList<String>();
             ArrayList<String> controlloUtenti = new ArrayList<String>();
             boolean controlloUtente = false;
-            String pathDir = "D:/Scuola/Tecnologie/ProgettoLogin";
-            String path = "D:/Scuola/Tecnologie/ProgettoLogin/registro.txt";
+            String pathDir = "../ProgettoLogin/ARCHIVIO/";
+            String path = "../ProgettoLogin/ARCHIVIO/registro.txt";
 
             if ((!"".equals(userID)) && (!"".equals(password))) {
                 String registrazione = userID + "," + password + ";";
                 System.out.println("Utente in registrazione:");
                 System.out.println(registrazione);
 
-                
                 pathDir += "/" + userID;
 
                 try {
@@ -121,8 +164,6 @@ public class LoginWindow implements ActionListener {
                 } catch (IOException ex) {
                     Logger.getLogger(LoginWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
-                
 
                 File file = new File(path);
                 controllo = file.exists();
@@ -234,6 +275,9 @@ public class LoginWindow implements ActionListener {
                         if (controlloUtente == false) {
                             Files.write(p, registrazione.getBytes(), StandardOpenOption.APPEND);
                             System.out.println("File txt aggiornato!");
+                            frame.dispose();
+                            IDePassword idpassword = new IDePassword();
+                            LoginWindow LoginPage = new LoginWindow(idpassword.getLoginInfo());
                         }
 
                     } else {
@@ -246,12 +290,16 @@ public class LoginWindow implements ActionListener {
             } else {
                 System.out.println("COMPILARE I CAMPI");
             }
-            frame.dispose();
-            IDePassword idpassword = new IDePassword();
-            LoginWindow LoginPage = new LoginWindow(idpassword.getLoginInfo());
-            
+
         }
 
+        //Utilizza le HashMap per paragonare i dati scritti dall'utente con i dati presenti nel registro
+        //confrontando Key e Password tramite la funzione equals
+        //inoltre una volta controllato cio
+        //se il login è corretto apre la pagina Welcome
+        //se invece non è corretto visualizza a schermo
+        //- password sbagliata se l'utente è registrato ma ha sbagliato password
+        //- Username non trovato se l'ID inserito non è registrato
         if (e.getSource() == loginButton) {
 
             String userID = UserID.getText();
@@ -263,7 +311,7 @@ public class LoginWindow implements ActionListener {
                     Message.setForeground(Color.green);
                     Message.setText("Correct Login");
                     frame.dispose();
-                   
+
                     WelcomePage welcomePage = new WelcomePage(userID);
                 } else {
                     Message.setForeground(Color.red);
@@ -276,9 +324,5 @@ public class LoginWindow implements ActionListener {
 
         }
     }
-
-    
-
-
 
 }
