@@ -44,29 +44,34 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 public class WelcomePage extends JFrame implements ActionListener {
 
     JFrame frame = new JFrame();
+    // JMenuBar Corrisponde alla barra del menu presente nel frame in alto
     JMenuBar menubar;
+    // JMenu Corrisponde all'elemento della menuBar 
     JMenu menu;
-    JMenu menu2;
 
+    // JMenuItem sono gli elementi del menu
     JMenuItem load;
     JMenuItem download;
     JMenuItem nuovo;
-    
     JMenuItem disconnetti;
 
     int cont = 1;
 
+    // Vettore utilizzato per la gestione dei file di un utente tramite ComboBox
     String[] es = new String[]{"--- Cerca ---"};
 
     String ID = "";
 
+    // Chiave di Criptazione e Decriptazione
     String key = Seriale.getKey();
 
     JTextField NomeFile = new JTextField();
     JTextField CercaFile = new JTextField();
 
-    JLabel NomeFileLabel = new JLabel("Inserisci il nome del file");
-    JLabel CercaFileLabel = new JLabel("Nome File da caricare");
+    JLabel NomeFileLabel = new JLabel("Inserisci il nome del file...");
+    JLabel CercaFileLabel = new JLabel("Nome File da caricare...");
+    
+    ImageIcon image = new ImageIcon(getClass().getResource("app.png"));
 
     ImageIcon icon = new ImageIcon(getClass().getResource("new.png"));
     ImageIcon icon2 = new ImageIcon(getClass().getResource("load.png"));
@@ -76,7 +81,8 @@ public class WelcomePage extends JFrame implements ActionListener {
     JTextArea jt = new JTextArea("Inserire il testo QUI...");
     JComboBox<String> ricerche = new JComboBox<>(es);
 
-    String pathGenerale = "D:/Scuola/Tecnologie/ProgettoLogin/";
+    String pathGenerale = "../ProgettoLogin/ARCHIVIO/";
+    
     WelcomePage(String nomeUtente) {
 
         ID = nomeUtente;
@@ -90,47 +96,36 @@ public class WelcomePage extends JFrame implements ActionListener {
             }
         }
         
+        frame.getContentPane().setBackground(new Color(173,216,230));
         
-       
-       
         System.out.println(nomeUtente);
 
         ricerche.setBounds(400, 80, 200, 25);
         NomeFile.setBounds(400, 20, 200, 25);
-
         NomeFileLabel.setBounds(620, 20, 150, 25);
         CercaFileLabel.setBounds(620, 80, 150, 25);
-
         menubar = new JMenuBar();
-
         menu = new JMenu("File");
-       
         menubar.add(menu);
  
-        
-
+        // nuovo file
         nuovo = new JMenuItem("New File", icon);
         menu.add(nuovo);
         // caricare file da modificare
-
         load = new JMenuItem("Load", icon2);
         menu.add(load);
-
         // scarica il file sul pc
         download = new JMenuItem("Download", icon3);
-        menu.add(download);
-        
+        menu.add(download);       
         disconnetti = new JMenuItem("Disconnetti", icon4);
         menu.add(disconnetti);
    
-
-
         nuovo.addActionListener(this);
         load.addActionListener(this);
         download.addActionListener(this);
         disconnetti.addActionListener(this);
-   
-
+       
+        frame.setIconImage(image.getImage());
         jt.setBounds(20, 20, 350, 400);
         jt.setBorder(new LineBorder(Color.BLACK));
         frame.add(ricerche);
@@ -145,11 +140,12 @@ public class WelcomePage extends JFrame implements ActionListener {
         frame.setVisible(true);
         frame.setJMenuBar(menubar);
         jt.setLineWrap(true);
+        frame.setTitle(ID);
+        frame.setResizable(false);
     }
 
+    // aggiornamento della comboBox con il settaggio dei nuovi Valori Cambiati
     public void AggiornaComboBox(String nome) {
-
-        
 
         for (int i = 0; i < cont; i++) {
             es[i] = nome + ".txt";
@@ -171,7 +167,7 @@ public class WelcomePage extends JFrame implements ActionListener {
         }
         if (e.getSource() == download) {
 
-            // aggiungere il selezionamento della cartella tramite il passaggio UTENTE
+            // se la casella di testo per la scelta del nome del file da salvare è vuota
             if (!"".equals(NomeFile.getText())) {
 
                 this.AggiornaComboBox(NomeFile.getText());

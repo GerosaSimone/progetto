@@ -13,7 +13,7 @@ import java.security.SecureRandom;
  */
 public class Seriale {
 
-    private static String key = generaKey();
+    private static String key = "dfgfdgdfgfdlwerknwkfjewh";
 
     public Seriale() {
         Arduino a = new Arduino("COM3", 9600);
